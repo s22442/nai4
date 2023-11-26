@@ -71,7 +71,7 @@ digits_y_test_svm_pred = digits_svm_classifier.predict(digits_X_test)
 
 print("Digits | SVM | Training Report")
 print(classification_report(digits_y_train,
-                            digits_svm_classifier.predict(digits_X_train)))
+      digits_svm_classifier.predict(digits_X_train)))
 print()
 
 print("Digits | SVM | Testing Report")
