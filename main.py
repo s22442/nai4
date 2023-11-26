@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report
-from sklearn import svm
+from sklearn import svm, datasets
 
 sonar = np.genfromtxt('sonar.csv', delimiter=',', dtype=str)
 
@@ -39,4 +39,41 @@ print()
 
 print("Sonar | SVM | Testing Report")
 print(classification_report(sonar_y_test, sonar_y_test_svm_pred))
+print()
+
+digits = datasets.load_digits()
+
+digits_X = digits.data
+digits_y = digits.target
+
+digits_X_train, digits_X_test, digits_y_train, digits_y_test = train_test_split(
+    digits_X, digits_y, test_size=0.5)
+
+
+digits_dc_classifier = DecisionTreeClassifier(random_state=0, max_depth=8)
+digits_dc_classifier.fit(digits_X_train, digits_y_train)
+
+digits_y_test_dc_pred = digits_dc_classifier.predict(digits_X_test)
+
+print("Digits | Decision Tree | Training Report")
+print(classification_report(digits_y_train,
+                            digits_dc_classifier.predict(digits_X_train)))
+print()
+
+print("Digits | Decision Tree | Testing Report")
+print(classification_report(digits_y_test, digits_y_test_dc_pred))
+print()
+
+digits_svm_classifier = svm.SVC()
+digits_svm_classifier.fit(digits_X_train, digits_y_train)
+
+digits_y_test_svm_pred = digits_svm_classifier.predict(digits_X_test)
+
+print("Digits | SVM | Training Report")
+print(classification_report(digits_y_train,
+                            digits_svm_classifier.predict(digits_X_train)))
+print()
+
+print("Digits | SVM | Testing Report")
+print(classification_report(digits_y_test, digits_y_test_svm_pred))
 print()
