@@ -50,7 +50,7 @@ digits_X_train, digits_X_test, digits_y_train, digits_y_test = train_test_split(
     digits_X, digits_y, test_size=0.5)
 
 
-digits_dc_classifier = DecisionTreeClassifier(random_state=0, max_depth=8)
+digits_dc_classifier = DecisionTreeClassifier(random_state=0, max_depth=100)
 digits_dc_classifier.fit(digits_X_train, digits_y_train)
 
 digits_y_test_dc_pred = digits_dc_classifier.predict(digits_X_test)
