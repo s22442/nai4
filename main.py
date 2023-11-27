@@ -13,7 +13,7 @@ sonar_X_train, sonar_X_test, sonar_y_train, sonar_y_test = train_test_split(
     sonar_X, sonar_y, test_size=0.5)
 
 
-sonar_dc_classifier = DecisionTreeClassifier(random_state=0, max_depth=8)
+sonar_dc_classifier = DecisionTreeClassifier(random_state=0, max_depth=100)
 sonar_dc_classifier.fit(sonar_X_train, sonar_y_train)
 
 sonar_y_test_dc_pred = sonar_dc_classifier.predict(sonar_X_test)
