@@ -10,8 +10,14 @@ Project created by:
 To run this project make sure that you:
 
 - download at least a 3.10 version of Python
-- download and install ucimlrepo with the following command via the terminal:
-  `pip install ucimlrepo`,
+- download and install `numpy` with the following command via the terminal:
+  ```bash
+  pip install numpy
+  ```
+- download and install `sklearn` with the following command via the terminal:
+  ```bash
+  pip install scikit-learn
+  ```
 
 Project created by:
 
