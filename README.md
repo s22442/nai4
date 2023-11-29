@@ -1,5 +1,10 @@
 ## 💡 About this project
 
+This is a machine learning project utilizing Decision Tree and SVM classification methods to group two large
+number of observations into classes. In this case, following datasets to be classified are used:
+- a sonar mine/rock recognition dataset (https://machinelearningmastery.com/standard-machine-learning-datasets/)
+- an optical recognition of handwritten digits dataset (one of the standard scikit-learn datasets)
+
 Project created by:
 
 - Kajetan Welc
